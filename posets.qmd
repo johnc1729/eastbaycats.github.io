@@ -38,9 +38,9 @@ If $a \mid b$, then there exists an integer $k_1$ such that $a k_1 = b$. If $b \
 
 This property is called *transitivity*, and we say that $\mid$ is a *transitive* relation on the integers.
 
-For all that follows, we denote by $\mathbb{N}$ the *natural numbers*, consisting of the non-negative integers $0, 1, 2, \dots$. Take special care that *we are including zero in this set*.[^2] It will soon be apparent why we do this.
+For all that follows, we denote by $\mathbb{N}$ the *natural numbers*, consisting of the non-negative integers $0, 1, 2, \dots$. Take special care that we are including zero in this set.[^2] It will soon be apparent why we do this.
 
-[^2]: This differs from another convention that excludes zero, which you may be used to.
+[^2]: This differs from another convention that excludes zero, which we may be used to.
 
 ::: {#exr-2.3}
 Show that for natural numbers $a$ and $b$, if $a \mid b$ and $b \mid a$, then $a = b$.[^3]
@@ -72,8 +72,9 @@ Show that the following are posets:
 2. For an arbitrary set $X$, $(\mathscr{P}(X), \subseteq)$, where $\mathscr{P}(X)$ is the *power set* of $X$, the set of all of its subsets.
 :::
 
-The following are more advanced examples, and may be skipped.
-
+<details>
+<summary>Advanced Exercises (!)</summary>
+These assume prior knowledge and may be safely skipped.
 ::: {#exr-2.6}
 Show that the following are posets:
 
@@ -81,5 +82,11 @@ Show that the following are posets:
 
 2. For a path-connected, locally path-connected, semilocally simply-connected topological space $X$ with a distinguished basepoint $x_0 \in X$, the set of basepoint-preserving isomorphism classes of path-connected covering spaces $p : (\tilde{X}, \tilde{x}_0 \to (X, x_0)$ is a poset under the relation: $(\tilde{X}_1, \tilde{x}_1) \preccurlyeq (\tilde{X}_2, \tilde{x}_2)$ if and only if there exists a basepoint-preserving covering map $f : \tilde{X}_2 \to \tilde{X}_1$ such that $p_1 \circ f = p_2$ (this can be rephrased less precisely by saying $X_2$ is a covering of $X_1$) [@Hatcher2002, p. 68].
 
-3. The field extensions.
+3. Given a field extension finite, Galois field extension $E/F$, there is a partial order on the intermediate fields $F \subseteq K \subseteq E$ under the inclusion relation: $K_1 \preccurlyeq K_2$ if and only if $K_1 \subseteq K_2$.
 :::
+<details>
+
+<summary>Solutions</summary>
+Every group is a subgroup of itself, so the subgroup relation is reflexive.
+</details>
+</details>
