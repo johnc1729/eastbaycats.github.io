@@ -14,9 +14,49 @@
     "href": "intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "This book contains the course notes for an informal one-semester seminar on category theory at CSU East Bay.",
+    "text": "This site contains the course notes for an informal one-semester seminar on category theory at CSU East Bay.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "posets.html",
+    "href": "posets.html",
+    "title": "2  Partially Ordered Sets",
+    "section": "",
+    "text": "2.1 The “Divides” Relation\nFor example, \\(3\\) divides \\(6\\) since \\(3 \\cdot 2 = 6\\), and \\(-5\\) divides \\(10\\) since \\(-5 \\cdot 2 = 10\\).\nThis is called reflexivity, and we say that \\(\\mid\\) is reflexive because it satisfies this property. For all that follows, we denote by \\(\\mathbb{N}\\) the natural numbers, consisting of the non-negative integers \\(0, 1, 2, \\dots\\). Take special care to notice that we are including zero in this set.1 It will soon be apparent why we do this.\nAnother important note about the “divides” relation is that saying “\\(a\\) divides \\(b\\)” is not the same as saying “\\(b\\) is divisible by \\(a\\).”",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Partially Ordered Sets</span>"
+    ]
+  },
+  {
+    "objectID": "posets.html#the-divides-relation",
+    "href": "posets.html#the-divides-relation",
+    "title": "2  Partially Ordered Sets",
+    "section": "",
+    "text": "Let \\(m\\) and \\(n\\) be integers. We say \\(m\\) divides \\(n\\), and we write \\(m \\mid n\\) if there exists an integer \\(q\\) such that \\(mq = n\\).\n\n\n\nExercise 2.1 Show that for any integer \\(a\\) we have \\(a \\mid a\\).\n\n\n\n\nExercise 2.2 Show that for natural numbers \\(a\\) and \\(b\\), if \\(a \\mid b\\) and \\(b \\mid a\\), then \\(a = b\\).2\n\n\n\nSolution\n\nIf \\(a \\mid b\\), then there exists a natural number \\(k_1\\) such that \\(a k_1 = b\\). Similarly, \\(b \\mid a\\) implies there exists a natural number \\(k_2\\) such that \\(b k_2 = a\\). Hence, \\(b = a k_1 = b k_1 k_2\\). We may similarly show that \\(a = k_1 k_2 a\\). The first equation tells us that \\(b (1 - k_1 k_2) = 0\\). Then either \\(b = 0\\) or \\(k_1 = k_2 = 1\\).\nIf \\(b = 0\\), then because \\(a k_1 = b\\) we have either \\(a = 0\\) (and thus \\(a = b\\)), or we have \\(k_1 = 0\\). This would imply that \\(a = k_1 k_2 a = 0 \\cdot k_2 a = 0\\). So \\(a = b\\).\nIf \\(b \\neq 0\\) (i.e., \\(k_1 = k_2 = 1\\)), then certainly \\(a = 1 \\cdot a = k_1 \\cdot a = b\\). In either case, \\(a = b\\).\n\n\nExercise 2.3 Show that if \\(a\\), \\(b\\), and \\(c\\) are integers, and \\(a \\mid b\\) and \\(b \\mid c\\), then \\(a \\mid c\\).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Partially Ordered Sets</span>"
+    ]
+  },
+  {
+    "objectID": "posets.html#defining-posets",
+    "href": "posets.html#defining-posets",
+    "title": "2  Partially Ordered Sets",
+    "section": "2.2 Defining Posets",
+    "text": "2.2 Defining Posets\nLet \\(\\preccurlyeq\\) denote a partial order relation.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Partially Ordered Sets</span>"
+    ]
+  },
+  {
+    "objectID": "posets.html#footnotes",
+    "href": "posets.html#footnotes",
+    "title": "2  Partially Ordered Sets",
+    "section": "",
+    "text": "This differs from another convention that excludes zero, which you may be used to.↩︎\nIf we allow \\(a\\) and \\(b\\) to be negative, then the most general statement we can make is that the magnitudes are equal.↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Partially Ordered Sets</span>"
     ]
   }
 ]

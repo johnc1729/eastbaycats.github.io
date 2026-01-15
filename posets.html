@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -137,8 +166,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-divides-relation" id="toc-the-divides-relation" class="nav-link active" data-scroll-target="#the-divides-relation"><span class="header-section-number">2.1</span> The “Divides” Relation</a></li>
+  <li><a href="#defining-posets" id="toc-defining-posets" class="nav-link" data-scroll-target="#defining-posets"><span class="header-section-number">2.2</span> Defining Posets</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -162,8 +198,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="the-divides-relation" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-divides-relation"><span class="header-section-number">2.1</span> The “Divides” Relation</h2>
+<div id="dfn-2.1">
+<p>Let <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> be integers. We say <span class="math inline">\(m\)</span> <em>divides</em> <span class="math inline">\(n\)</span>, and we write <span class="math inline">\(m \mid n\)</span> if there exists an integer <span class="math inline">\(q\)</span> such that <span class="math inline">\(mq = n\)</span>.</p>
+</div>
+<p>For example, <span class="math inline">\(3\)</span> divides <span class="math inline">\(6\)</span> since <span class="math inline">\(3 \cdot 2 = 6\)</span>, and <span class="math inline">\(-5\)</span> divides <span class="math inline">\(10\)</span> since <span class="math inline">\(-5 \cdot 2 = 10\)</span>.</p>
+<div id="exr-2.1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2.1</strong></span> Show that for any integer <span class="math inline">\(a\)</span> we have <span class="math inline">\(a \mid a\)</span>.</p>
+</div>
+<p>This is called <em>reflexivity</em>, and we say that <span class="math inline">\(\mid\)</span> is <em>reflexive</em> because it satisfies this property. For all that follows, we denote by <span class="math inline">\(\mathbb{N}\)</span> the <em>natural numbers</em>, consisting of the non-negative integers <span class="math inline">\(0, 1, 2, \dots\)</span>. Take special care to notice that <em>we are including zero in this set</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> It will soon be apparent why we do this.</p>
+<p>Another important note about the “divides” relation is that saying “<span class="math inline">\(a\)</span> divides <span class="math inline">\(b\)</span>” is <em>not</em> the same as saying “<span class="math inline">\(b\)</span> is divisible by <span class="math inline">\(a\)</span>.”</p>
+<div id="exr-2.2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2.2</strong></span> Show that for natural numbers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, if <span class="math inline">\(a \mid b\)</span> and <span class="math inline">\(b \mid a\)</span>, then <span class="math inline">\(a = b\)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</div>
+<details>
+<summary>
+Solution
+</summary>
+<p>If <span class="math inline">\(a \mid b\)</span>, then there exists a natural number <span class="math inline">\(k_1\)</span> such that <span class="math inline">\(a k_1 = b\)</span>. Similarly, <span class="math inline">\(b \mid a\)</span> implies there exists a natural number <span class="math inline">\(k_2\)</span> such that <span class="math inline">\(b k_2 = a\)</span>. Hence, <span class="math inline">\(b = a k_1 = b k_1 k_2\)</span>. We may similarly show that <span class="math inline">\(a = k_1 k_2 a\)</span>. The first equation tells us that <span class="math inline">\(b (1 - k_1 k_2) = 0\)</span>. Then either <span class="math inline">\(b = 0\)</span> or <span class="math inline">\(k_1 = k_2 = 1\)</span>.</p>
+<p>If <span class="math inline">\(b = 0\)</span>, then because <span class="math inline">\(a k_1 = b\)</span> we have either <span class="math inline">\(a = 0\)</span> (and thus <span class="math inline">\(a = b\)</span>), or we have <span class="math inline">\(k_1 = 0\)</span>. This would imply that <span class="math inline">\(a = k_1 k_2 a = 0 \cdot k_2 a = 0\)</span>. So <span class="math inline">\(a = b\)</span>.</p>
+If <span class="math inline">\(b \neq 0\)</span> (i.e., <span class="math inline">\(k_1 = k_2 = 1\)</span>), then certainly <span class="math inline">\(a = 1 \cdot a = k_1 \cdot a = b\)</span>. In either case, <span class="math inline">\(a = b\)</span>.
+</details>
+<div id="exr-2.3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 2.3</strong></span> Show that if <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> are integers, and <span class="math inline">\(a \mid b\)</span> and <span class="math inline">\(b \mid c\)</span>, then <span class="math inline">\(a \mid c\)</span>.</p>
+</div>
+</section>
+<section id="defining-posets" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="defining-posets"><span class="header-section-number">2.2</span> Defining Posets</h2>
+<p>Let <span class="math inline">\(\preccurlyeq\)</span> denote a partial order relation.</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>This differs from another convention that excludes zero, which you may be used to.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>If we allow <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> to be negative, then the most general statement we can make is that the magnitudes are equal.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
