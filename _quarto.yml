@@ -4,12 +4,12 @@ project:
 
 book:
   title: "Categories for the Curious"
-  author: "Norah Jones"
+  author: "John Cavanaugh"
   date: "1/14/2026"
   chapters:
     - index.qmd
     - intro.qmd
-    - summary.qmd
+    - posets.qmd
     - references.qmd
 
 bibliography: references.bib
