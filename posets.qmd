@@ -1,2 +1,8 @@
 # Partially Ordered Sets
 
+## The "Divides" Relation
+
+Let $m$ and $n$ be integers. Recall that we say $m$ /divides/ $n$, and we write $m \mid n$ if there exists an integer $q$ such that $mq = n$.
+
+## Defining Posets
+Let $\preccurlyeq$ denote a partial order relation.
