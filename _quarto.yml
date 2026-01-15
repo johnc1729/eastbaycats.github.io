@@ -25,7 +25,3 @@ format:
     toc: true
     number-sections: true
     documentclass: scrreprt
-
-theorem:
-  definition:
-    counter: exercise

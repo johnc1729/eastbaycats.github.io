@@ -18,15 +18,31 @@ Show that for any integer $a$ we have $a \mid a$.
 We have $a \cdot 1 = a$, so $a$ satisfies @def-divides with $1$ in place of $q$.
 </details>
 
-This is called *reflexivity*, and we say that $\mid$ is *reflexive* because it satisfies this property. For all that follows, we denote by $\mathbb{N}$ the *natural numbers*, consisting of the non-negative integers $0, 1, 2, \dots$. Take special care that *we are including zero in this set*.[^1] It will soon be apparent why we do this.
+This is called *reflexivity*, and we say that $\mid$ is *reflexive* because it satisfies this property.
 
-[^1]: This differs from another convention that excludes zero, which you may be used to.
+Another important note about the "divides" relation is that to say "$a$ divides $b$" is not the same as saying "$b/a$ is an integer." The latter is a statement about the result of applying the division binary *operation* to $a$ and $b$.[^1] The number $0$ is what primarily causes issues here: "$0$ divides $0$" is true, since $0 \cdot q = 0$ for any number $q$. Meanwhile, $0/0$ is undefined.
 
-Another important note about the "divides" relation is that to say "$a$ divides $b$" is not the same as saying "$b/a$ is an integer." The latter is a statement about the result of applying the division binary *operation* to $a$ and $b$.[^2] 
+[^1]: A binary operation on a set $X$ is a mapping $X \times X \to X$. A relation is not a mapping; it is simply a statement (something that is either true or false).
 
-[^2]: A binary operation on a set $X$ is a mapping $X \times X \to X$. A relation is not a mapping; it is simply a statement (something that is either true or false).
 
-::: {#exr-2.2}
+This property is known as *antisymmetry*, and we say that $\mid$ is an *antisymmetric* relation on $\mathbb{N}$.
+
+::: {#exr-2.3}
+Show that if $a$, $b$, and $c$ are integers, and $a \mid b$ and $b \mid c$, then $a \mid c$.
+:::
+
+<details>
+<summary>Solution</summary>
+If $a \mid b$, then there exists an integer $k_1$ such that $a k_1 = b$. If $b \mid c$, then there exists an integer $k_2$ such that $b k_2 = c$. Hence, $a (k_1 k_2) = (a k_1) k_2 = b k_2 = c$. So $a$ divides $c$ with $k_1 k_2$ in place of $q$ in @def-divides.
+</details>
+
+This property is called *transitivity*, and we say that $\mid$ is a *transitive* relation on the integers.
+
+For all that follows, we denote by $\mathbb{N}$ the *natural numbers*, consisting of the non-negative integers $0, 1, 2, \dots$. Take special care that *we are including zero in this set*.[^2] It will soon be apparent why we do this.
+
+[^2]: This differs from another convention that excludes zero, which you may be used to.
+
+::: {#exr-2.3}
 Show that for natural numbers $a$ and $b$, if $a \mid b$ and $b \mid a$, then $a = b$.[^3]
 :::
 
@@ -36,15 +52,29 @@ Show that for natural numbers $a$ and $b$, if $a \mid b$ and $b \mid a$, then $a
 <summary>Solution</summary>
 If $a \mid b$, then there exists a natural number $k_1$ such that $a k_1 = b$. Similarly, $b \mid a$ implies there exists a natural number $k_2$ such that $b k_2 = a$. Hence, $b = a k_1 = b k_1 k_2$. We may similarly show that $a = k_1 k_2 a$. The first equation tells us that $b (1 - k_1 k_2) = 0$. Then either $b = 0$ or $k_1 = k_2 = 1$.
 
-If $b = 0$, then because $a k_1 = b$ we have either $a = 0$ (and thus $a = b$), or we have $k_1 = 0$. This would imply that $a = k_1 k_2 a = 0 \cdot k_2 a = 0$. So $a = b$.
+If $b = 0$, then because $a k_1 = b$ we have either $a = 0$ (and thus $a = b$), or we have $k_1 = 0$. This would imply that $a = k_1 k_2 a = 0 \cdot k_2 a = 0$. So $a = b = 0$.
 
-If $b \neq 0$ (i.e., $k_1 = k_2 = 1$), then certainly $a = 1 \cdot a = k_1 \cdot a = b$. In either case, $a = b$.
+If $b \neq 0$ (i.e., $k_1 = k_2 = 1$), then certainly $a = 1 \cdot a = a k_1 = b$. In either case, $a = b$.
 </details>
 
-::: {#exr-2.3}
-Show that if $a$, $b$, and $c$ are integers, and $a \mid b$ and $b \mid c$, then $a \mid c$.
+::: {#exr-2.4}
+Give an example of a pair of integers for which $a \mid b$ and $b \mid a$, yet $a \neq b$.
 :::
 
-
 ## Defining Posets
-Let $\preccurlyeq$ denote a partial order relation.
+We will use $\preccurlyeq$ to denote an arbitrary partial order. A pair $(X, \precurlyeq)$ consisting of the set $X$ equipped with a partial order relation $\preccurlyeq$ on $X$ is called a *partially ordered set* or *poset*. The set $(\mathbb{N}, \mid)$ is a poset, since we verified that $\mid$ is reflexive, transitive, and antisymmetric on $\mathbb{N}$. On the other hand, $(\mathbb{Z}, \mid)$ is not a poset, since $\mid$ is not antisymmetric if we allow both positive and negative integers (see @exr-2.4).
+
+::: {#exr-2.5}
+Show that the following are posets:
+1. $(\mathbb{Z}, \leq)$.
+2. For an arbitrary set $X$, $(\mathscr{P}(X), \subseteq)$, where $\mathscr{P}(X)$ is the *power set* of $X$, the set of all of its subsets.
+:::
+
+The following are more advanced exercises, and may be skipped.
+
+::: {#exr-2.6}
+Show that the following are posets:
+1. For an arbitrary group $G$, $(\mathscr{A}(G), \leq)$ where the set $\mathscr{A}(G)$ consists of the subgroups of $G$ and $\leq$ is the "subgroup" relation.
+2. For a path-connected, locally path-connected, semilocally simply-connected topological space $X$ with a distinguished basepoint $x_0 \in X$, the set of basepoint-preserving isomorphism classes of path-connected covering spaces $p : (\tilde{X}, \tilde{x}_0 \to (X, x_0)$ is a poset under the relation: $(\tilde{X}_1, \tilde{x}_1) \preccurlyeq (\tilde{X}_2, \tilde{x}_2)$ if and only if there exists a basepoint-preserving covering map $f : \tilde{X}_2 \to \tilde{X}_1$ such that $p_1 \circ f = p_2$ (this can be rephrased less precisely by saying $X_2$ is a covering of $X_1$) [@Hatcher2002, p. 68].
+3.
+:::
