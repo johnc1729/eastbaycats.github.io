@@ -24,7 +24,7 @@ Another important note about the divides relation
 Show that for natural numbers $a$ and $b$, if $a \mid b$ and $b \mid a$, then $a = b$.
 :::
 
-::: {.callout-note collapse=true}
+::: {.callout collapse=true}
 If $a \mid b$, then there exists a natural number $k_1$ such that $a k_1 = b$. Similarly, $b \mid a$ implies there exists a natural number $k_2$ such that $b k_2 = a$. Hence, $b = a k_1 = b k_1 k_2$. Thus, $b (1 - k_1 k_2) = 0$. Then either $b = 0$ or $k_1 = k_2 = 1$.
 :::
 
