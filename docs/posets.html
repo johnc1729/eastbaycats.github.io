@@ -200,17 +200,23 @@ window.Quarto = {
 
 <section id="the-divides-relation" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="the-divides-relation"><span class="header-section-number">2.1</span> The “Divides” Relation</h2>
-<div id="dfn-2.1">
-<p>Let <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> be integers. We say <span class="math inline">\(m\)</span> <em>divides</em> <span class="math inline">\(n\)</span>, and we write <span class="math inline">\(m \mid n\)</span> if there exists an integer <span class="math inline">\(q\)</span> such that <span class="math inline">\(mq = n\)</span>.</p>
+<div id="def-divides" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.1</strong></span> Let <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> be integers. We say <span class="math inline">\(m\)</span> <em>divides</em> <span class="math inline">\(n\)</span>, and we write <span class="math inline">\(m \mid n\)</span> if there exists an integer <span class="math inline">\(q\)</span> such that <span class="math inline">\(mq = n\)</span>.</p>
 </div>
-<p>For example, <span class="math inline">\(3\)</span> divides <span class="math inline">\(6\)</span> since <span class="math inline">\(3 \cdot 2 = 6\)</span>, and <span class="math inline">\(-5\)</span> divides <span class="math inline">\(10\)</span> since <span class="math inline">\(-5 \cdot 2 = 10\)</span>.</p>
+<p>For example, <span class="math inline">\(3\)</span> divides <span class="math inline">\(6\)</span> since <span class="math inline">\(3 \cdot 2 = 6\)</span>, and <span class="math inline">\(-5\)</span> divides <span class="math inline">\(15\)</span> since <span class="math inline">\(-5 \cdot 3 = 15\)</span>.</p>
 <div id="exr-2.1" class="theorem exercise">
 <p><span class="theorem-title"><strong>Exercise 2.1</strong></span> Show that for any integer <span class="math inline">\(a\)</span> we have <span class="math inline">\(a \mid a\)</span>.</p>
 </div>
-<p>This is called <em>reflexivity</em>, and we say that <span class="math inline">\(\mid\)</span> is <em>reflexive</em> because it satisfies this property. For all that follows, we denote by <span class="math inline">\(\mathbb{N}\)</span> the <em>natural numbers</em>, consisting of the non-negative integers <span class="math inline">\(0, 1, 2, \dots\)</span>. Take special care to notice that <em>we are including zero in this set</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> It will soon be apparent why we do this.</p>
-<p>Another important note about the “divides” relation is that saying “<span class="math inline">\(a\)</span> divides <span class="math inline">\(b\)</span>” is <em>not</em> the same as saying “<span class="math inline">\(b\)</span> is divisible by <span class="math inline">\(a\)</span>.”</p>
+<details>
+<summary>
+Solution
+</summary>
+We have <span class="math inline">\(a \cdot 1 = a\)</span>, so <span class="math inline">\(a\)</span> satisfies <a href="#def-divides" class="quarto-xref">Definition&nbsp;<span>2.1</span></a> with <span class="math inline">\(1\)</span> in place of <span class="math inline">\(q\)</span>.
+</details>
+<p>This is called <em>reflexivity</em>, and we say that <span class="math inline">\(\mid\)</span> is <em>reflexive</em> because it satisfies this property. For all that follows, we denote by <span class="math inline">\(\mathbb{N}\)</span> the <em>natural numbers</em>, consisting of the non-negative integers <span class="math inline">\(0, 1, 2, \dots\)</span>. Take special care that <em>we are including zero in this set</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> It will soon be apparent why we do this.</p>
+<p>Another important note about the “divides” relation is that to say “<span class="math inline">\(a\)</span> divides <span class="math inline">\(b\)</span>” is not the same as saying “<span class="math inline">\(b/a\)</span> is an integer.” The latter is a statement about the result of applying the division binary <em>operation</em> to <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div id="exr-2.2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 2.2</strong></span> Show that for natural numbers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, if <span class="math inline">\(a \mid b\)</span> and <span class="math inline">\(b \mid a\)</span>, then <span class="math inline">\(a = b\)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p><span class="theorem-title"><strong>Exercise 2.2</strong></span> Show that for natural numbers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, if <span class="math inline">\(a \mid b\)</span> and <span class="math inline">\(b \mid a\)</span>, then <span class="math inline">\(a = b\)</span>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 </div>
 <details>
 <summary>
@@ -234,7 +240,8 @@ If <span class="math inline">\(b \neq 0\)</span> (i.e., <span class="math inline
 <hr>
 <ol>
 <li id="fn1"><p>This differs from another convention that excludes zero, which you may be used to.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>If we allow <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> to be negative, then the most general statement we can make is that the magnitudes are equal.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>A binary operation on a set <span class="math inline">\(X\)</span> is a mapping <span class="math inline">\(X \times X \to X\)</span>. A relation is not a mapping; it is simply a statement (something that is either true or false).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>If we allow <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> to be negative, then the most general statement we can make is that the magnitudes are equal.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

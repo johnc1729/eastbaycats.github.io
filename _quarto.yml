@@ -26,5 +26,11 @@ format:
     number-sections: true
     documentclass: scrreprt
 
+theorem:
+  exercise:
+    name: Exercise
+    counter: exdef
 
-
+  definition:
+    name: Definition
+    counter: exdef
