@@ -79,7 +79,9 @@ Show that the following are posets:
 
 ## Advanced Exercises
 
-These assume prior knowledge and may be safely skipped.
+::: {.callout-warning}
+This section assumes prior knowledge. It may be safely skipped.
+:::
 
 ::: {#exr-3.6}
 Show that the following are posets:

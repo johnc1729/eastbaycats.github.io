@@ -4,14 +4,14 @@
 
 The definition is simple, but the level of abstraction in its statement may make the concept seem alien (even though it should be familiar). 
 
-::: {def-abstractCategory}
+::: {#def-abstractCategory}
 A *category* $\mathcal{C}$ consists of the following data:
 
 1. A class of *objects* denoted $\operatorname{Obj}(\mathcal{C})$.
 
 2. For each pair of objects $x$ and $y$, there is a set $\operatorname{Hom}_{\mathcal{C}}(x, y)$ containing the *morphisms* with *source* $x$ and *target* $y$ (morphisms are also called *arrows*).
 
-3. For any pair of morphisms $f$ and $g$ such that the target of $f$ is equal to the source of $g$, there is a morphism $g \circ f$ (or simply $gf$) called the *composition* of $f$ with $g$. This morphism shares its source with that of $f$ and its target with that of $g$.
+3. For any pair of morphisms $f$ and $g$ such that the target of $f$ is equal to the source of $g$ there is a morphism $g \circ f$ (or simply $gf$) called the *composition* of $f$ with $g$. This morphism shares its source with that of $f$ and its target with that of $g$.
 
 Additionally, the following properties must be satisfied:
 
@@ -40,7 +40,7 @@ We could do away with set theory, and instead formally define all the mathematic
 
 This is meant to be a very approachable introduction to category theory. All that is needed to progress through these notes is a persisting curiosity. Ideally, one is comfortable with sets and functions between them, but beyond that not much else is required. There are more sections of the notes which may assume more background, but these are clearly marked and can be skipped without disrupting the flow of the material. Every such section is indicated like so:
 
-::: {callout-warning}
+::: {.callout-warning}
 This section assumes prior knowledge. It may be safely skipped.
 :::
 

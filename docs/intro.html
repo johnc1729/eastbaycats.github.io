@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -184,8 +213,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#what-is-a-category" id="toc-what-is-a-category" class="nav-link active" data-scroll-target="#what-is-a-category"><span class="header-section-number">1.1</span> What is a category?</a></li>
-  <li><a href="#why-would-we-want-to-learn-this" id="toc-why-would-we-want-to-learn-this" class="nav-link" data-scroll-target="#why-would-we-want-to-learn-this"><span class="header-section-number">1.2</span> Why would we want to learn this?</a></li>
-  <li><a href="#our-goal" id="toc-our-goal" class="nav-link" data-scroll-target="#our-goal"><span class="header-section-number">1.3</span> Our Goal</a></li>
+  <li><a href="#categories-as-a-foundation-for-mathematics" id="toc-categories-as-a-foundation-for-mathematics" class="nav-link" data-scroll-target="#categories-as-a-foundation-for-mathematics"><span class="header-section-number">1.2</span> Categories as a foundation for mathematics</a></li>
+  <li><a href="#categories-reveal-structure" id="toc-categories-reveal-structure" class="nav-link" data-scroll-target="#categories-reveal-structure"><span class="header-section-number">1.3</span> Categories reveal structure</a></li>
+  <li><a href="#our-goal" id="toc-our-goal" class="nav-link" data-scroll-target="#our-goal"><span class="header-section-number">1.4</span> Our Goal</a></li>
   </ul>
 </nav>
     </div>
@@ -213,17 +243,39 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="what-is-a-category" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="what-is-a-category"><span class="header-section-number">1.1</span> What is a category?</h2>
-<p>We will learn the <a href="./abstractCategories.html">abstract definition of a category</a> later. However, it would be counterproductive to state the precise definition right now.</p>
+<p>The definition is simple, but the level of abstraction in its statement may make the concept seem alien (even though it should be familiar).</p>
+<div class="{def-abstractCategory}">
+<p>A <em>category</em> <span class="math inline">\(\mathcal{C}\)</span> consists of the following data:</p>
+<ol type="1">
+<li><p>A class of <em>objects</em> denoted <span class="math inline">\(\operatorname{Obj}(\mathcal{C})\)</span>.</p></li>
+<li><p>For each pair of objects <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, there is a set <span class="math inline">\(\operatorname{Hom}_{\mathcal{C}}(x, y)\)</span> containing the <em>morphisms</em> with <em>source</em> <span class="math inline">\(x\)</span> and <em>target</em> <span class="math inline">\(y\)</span> (morphisms are also called <em>arrows</em>).</p></li>
+<li><p>For any pair of morphisms <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> such that the target of <span class="math inline">\(f\)</span> is equal to the source of <span class="math inline">\(g\)</span>, there is a morphism <span class="math inline">\(g \circ f\)</span> (or simply <span class="math inline">\(gf\)</span>) called the <em>composition</em> of <span class="math inline">\(f\)</span> with <span class="math inline">\(g\)</span>. This morphism shares its source with that of <span class="math inline">\(f\)</span> and its target with that of <span class="math inline">\(g\)</span>.</p></li>
+</ol>
+<p>Additionally, the following properties must be satisfied:</p>
+<ol type="1">
+<li><p>Each object <span class="math inline">\(x\)</span> has an identity morphism <span class="math inline">\(1_x\)</span> such that for any morphism <span class="math inline">\(f \in \operatorname{Hom}_{\mathcal{C}}(x, y)\)</span> we have <span class="math inline">\(f \circ 1_x = f = 1_y \circ f\)</span>.</p></li>
+<li><p>Composition is associative, so that whenever <span class="math inline">\(f \in \operatorname{Hom}_{\mathcal{C}}(w, x)\)</span>, <span class="math inline">\(g \in \operatorname{Hom}_{\mathcal{C}}(x, y)\)</span>, and <span class="math inline">\(h \in \operatorname{Hom}_{\mathcal{C}}(y, z)\)</span>, we have <span class="math inline">\((hg)f = h(gf)\)</span>.</p></li>
+</ol>
+</div>
+<p>We will learn how to draw conclusions from the <a href="./abstractCategories.html">abstract definition of a category</a> later. It’s useful to have the definition on hand, but if one is intimidated by this, then one can informally think of a category as something where we have objects, a way of mapping between those objects (along with an identity map on each object), and a way of composing those maps (where composition is associative). Almost everything in mathematics satisfies these criteria. We’ll see that what can be considered a “map” is fairly flexible, and the ways we might compose those maps can also vary quite a bit.</p>
 </section>
-<section id="why-would-we-want-to-learn-this" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="why-would-we-want-to-learn-this"><span class="header-section-number">1.2</span> Why would we want to learn this?</h2>
+<section id="categories-as-a-foundation-for-mathematics" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="categories-as-a-foundation-for-mathematics"><span class="header-section-number">1.2</span> Categories as a foundation for mathematics</h2>
 <p>Throughout our mathematical education, we have likely encountered many types of mathematical objects (e.g., groups, rings, vector spaces, fields, topological spaces, sets, functions, manifolds). We might have learned that a group is “a <em>set</em> equipped with an associative binary operation having an identity element, and for which every element has an inverse,” or that a “vector space is a <em>set</em> equipped with the operations of vector addition and scalar multiplication satisfying the usual axioms.” It may have been a while since we’ve dealt with these definitions, or we may not have learned them at all. That is okay. What is important to focus on now is that both of these objects are defined as a <em>set</em> equipped with some additional structure. We have defined them in terms of “sets.”</p>
 <p>So what is a “set,” exactly? We might see it defined as “a collection of objects, which are called its elements,” which then begs the question: what is a “collection”? How is it that we can give such precise definitions of all of the structures mentioned above (vector spaces, groups, rings, etc.), yet we seem to have difficulty making precise the concept of a set, on which the definitions of all of these structures rely?</p>
-<p>The uncomfortable truth is that modern mathematics, with its rigorous definitions and axioms, cannot exist <em>ex nihilo</em>. To formulate a rigorous definition, we must first precisely define each term within that definition, and so on for the definitions of each of those terms. This process cannot end without either defining two objects “circularly,” such that some object is defined in terms of another and vice versa, or declaring once and for all that certain objects are atomic, and they cannot be defined in terms of any other object.</p>
-<p>Categories constitute an alternative foundation for mathematics; all of the structures mentioned above could instead be defined in terms of categories. While</p>
+<p>The uncomfortable truth is that modern mathematics, with its rigorous definitions and axioms, cannot exist <em>ex nihilo</em>. To formulate a rigorous definition, we must first precisely define each term within that definition, and so on for the definitions of each of those terms. This process cannot end without either defining two objects “circularly,” such that some object is defined in terms of another and vice versa, or declaring once and for all that certain objects are atomic, and they cannot be defined in terms of any other object. This is where sets lie: we do not bother defining what a set is, and instead we focus on the conclusions drawn from a set of axioms we assume to hold about sets.</p>
+<p>We could do away with set theory, and instead formally define all the mathematical structures above in terms of categories. Thus, categories constitute an alternative foundation for mathematics. But category theory does not bypass the problem of definability. There are still terms which we take as “atomic,” and we do not bother precisely defining them (e.g., the objects and morphisms).</p>
 </section>
-<section id="our-goal" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="our-goal"><span class="header-section-number">1.3</span> Our Goal</h2>
+<section id="categories-reveal-structure" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="categories-reveal-structure"><span class="header-section-number">1.3</span> Categories reveal structure</h2>
+</section>
+<section id="our-goal" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="our-goal"><span class="header-section-number">1.4</span> Our Goal</h2>
+<p>This is meant to be a very approachable introduction to category theory. All that is needed to progress through these notes is a persisting curiosity. Ideally, one is comfortable with sets and functions between them, but beyond that not much else is required. There are more sections of the notes which may assume more background, but these are clearly marked and can be skipped without disrupting the flow of the material. Every such section is indicated like so:</p>
+<div class="{callout-warning}">
+<p>This section assumes prior knowledge. It may be safely skipped.</p>
+</div>
+<p>These sections will typically be found near the end of each chapter.</p>
 
 
 </section>

@@ -14,17 +14,37 @@
     "href": "intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "1.1 What is a category?\nWe will learn the abstract definition of a category later. However, it would be counterproductive to state the precise definition right now.",
+    "text": "1.1 What is a category?\nThe definition is simple, but the level of abstraction in its statement may make the concept seem alien (even though it should be familiar).\nWe will learn how to draw conclusions from the abstract definition of a category later. It’s useful to have the definition on hand, but if one is intimidated by this, then one can informally think of a category as something where we have objects, a way of mapping between those objects (along with an identity map on each object), and a way of composing those maps (where composition is associative). Almost everything in mathematics satisfies these criteria. We’ll see that what can be considered a “map” is fairly flexible, and the ways we might compose those maps can also vary quite a bit.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
   },
   {
-    "objectID": "intro.html#why-would-we-want-to-learn-this",
-    "href": "intro.html#why-would-we-want-to-learn-this",
+    "objectID": "intro.html#what-is-a-category",
+    "href": "intro.html#what-is-a-category",
     "title": "1  Introduction",
-    "section": "1.2 Why would we want to learn this?",
-    "text": "1.2 Why would we want to learn this?\nThroughout our mathematical education, we have likely encountered many types of mathematical objects (e.g., groups, rings, vector spaces, fields, topological spaces, sets, functions, manifolds). We might have learned that a group is “a set equipped with an associative binary operation having an identity element, and for which every element has an inverse,” or that a “vector space is a set equipped with the operations of vector addition and scalar multiplication satisfying the usual axioms.” It may have been a while since we’ve dealt with these definitions, or we may not have learned them at all. That is okay. What is important to focus on now is that both of these objects are defined as a set equipped with some additional structure. We have defined them in terms of “sets.”\nSo what is a “set,” exactly? We might see it defined as “a collection of objects, which are called its elements,” which then begs the question: what is a “collection”? How is it that we can give such precise definitions of all of the structures mentioned above (vector spaces, groups, rings, etc.), yet we seem to have difficulty making precise the concept of a set, on which the definitions of all of these structures rely?\nThe uncomfortable truth is that modern mathematics, with its rigorous definitions and axioms, cannot exist ex nihilo. To formulate a rigorous definition, we must first precisely define each term within that definition, and so on for the definitions of each of those terms. This process cannot end without either defining two objects “circularly,” such that some object is defined in terms of another and vice versa, or declaring once and for all that certain objects are atomic, and they cannot be defined in terms of any other object.\nCategories constitute an alternative foundation for mathematics; all of the structures mentioned above could instead be defined in terms of categories. While",
+    "section": "",
+    "text": "A category \\(\\mathcal{C}\\) consists of the following data:\n\nA class of objects denoted \\(\\operatorname{Obj}(\\mathcal{C})\\).\nFor each pair of objects \\(x\\) and \\(y\\), there is a set \\(\\operatorname{Hom}_{\\mathcal{C}}(x, y)\\) containing the morphisms with source \\(x\\) and target \\(y\\) (morphisms are also called arrows).\nFor any pair of morphisms \\(f\\) and \\(g\\) such that the target of \\(f\\) is equal to the source of \\(g\\), there is a morphism \\(g \\circ f\\) (or simply \\(gf\\)) called the composition of \\(f\\) with \\(g\\). This morphism shares its source with that of \\(f\\) and its target with that of \\(g\\).\n\nAdditionally, the following properties must be satisfied:\n\nEach object \\(x\\) has an identity morphism \\(1_x\\) such that for any morphism \\(f \\in \\operatorname{Hom}_{\\mathcal{C}}(x, y)\\) we have \\(f \\circ 1_x = f = 1_y \\circ f\\).\nComposition is associative, so that whenever \\(f \\in \\operatorname{Hom}_{\\mathcal{C}}(w, x)\\), \\(g \\in \\operatorname{Hom}_{\\mathcal{C}}(x, y)\\), and \\(h \\in \\operatorname{Hom}_{\\mathcal{C}}(y, z)\\), we have \\((hg)f = h(gf)\\).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#categories-as-a-foundation-for-mathematics",
+    "href": "intro.html#categories-as-a-foundation-for-mathematics",
+    "title": "1  Introduction",
+    "section": "1.2 Categories as a foundation for mathematics",
+    "text": "1.2 Categories as a foundation for mathematics\nThroughout our mathematical education, we have likely encountered many types of mathematical objects (e.g., groups, rings, vector spaces, fields, topological spaces, sets, functions, manifolds). We might have learned that a group is “a set equipped with an associative binary operation having an identity element, and for which every element has an inverse,” or that a “vector space is a set equipped with the operations of vector addition and scalar multiplication satisfying the usual axioms.” It may have been a while since we’ve dealt with these definitions, or we may not have learned them at all. That is okay. What is important to focus on now is that both of these objects are defined as a set equipped with some additional structure. We have defined them in terms of “sets.”\nSo what is a “set,” exactly? We might see it defined as “a collection of objects, which are called its elements,” which then begs the question: what is a “collection”? How is it that we can give such precise definitions of all of the structures mentioned above (vector spaces, groups, rings, etc.), yet we seem to have difficulty making precise the concept of a set, on which the definitions of all of these structures rely?\nThe uncomfortable truth is that modern mathematics, with its rigorous definitions and axioms, cannot exist ex nihilo. To formulate a rigorous definition, we must first precisely define each term within that definition, and so on for the definitions of each of those terms. This process cannot end without either defining two objects “circularly,” such that some object is defined in terms of another and vice versa, or declaring once and for all that certain objects are atomic, and they cannot be defined in terms of any other object. This is where sets lie: we do not bother defining what a set is, and instead we focus on the conclusions drawn from a set of axioms we assume to hold about sets.\nWe could do away with set theory, and instead formally define all the mathematical structures above in terms of categories. Thus, categories constitute an alternative foundation for mathematics. But category theory does not bypass the problem of definability. There are still terms which we take as “atomic,” and we do not bother precisely defining them (e.g., the objects and morphisms).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#categories-reveal-structure",
+    "href": "intro.html#categories-reveal-structure",
+    "title": "1  Introduction",
+    "section": "1.3 Categories reveal structure",
+    "text": "1.3 Categories reveal structure",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -33,8 +53,8 @@
     "objectID": "intro.html#our-goal",
     "href": "intro.html#our-goal",
     "title": "1  Introduction",
-    "section": "1.3 Our Goal",
-    "text": "1.3 Our Goal",
+    "section": "1.4 Our Goal",
+    "text": "1.4 Our Goal\nThis is meant to be a very approachable introduction to category theory. All that is needed to progress through these notes is a persisting curiosity. Ideally, one is comfortable with sets and functions between them, but beyond that not much else is required. There are more sections of the notes which may assume more background, but these are clearly marked and can be skipped without disrupting the flow of the material. Every such section is indicated like so:\n\nThis section assumes prior knowledge. It may be safely skipped.\n\nThese sections will typically be found near the end of each chapter.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
