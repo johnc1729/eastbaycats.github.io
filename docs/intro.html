@@ -244,12 +244,12 @@ window.Quarto = {
 <section id="what-is-a-category" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="what-is-a-category"><span class="header-section-number">1.1</span> What is a category?</h2>
 <p>The definition is simple, but the level of abstraction in its statement may make the concept seem alien (even though it should be familiar).</p>
-<div class="{def-abstractCategory}">
-<p>A <em>category</em> <span class="math inline">\(\mathcal{C}\)</span> consists of the following data:</p>
+<div id="def-abstractCategory" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1.1</strong></span> A <em>category</em> <span class="math inline">\(\mathcal{C}\)</span> consists of the following data:</p>
 <ol type="1">
 <li><p>A class of <em>objects</em> denoted <span class="math inline">\(\operatorname{Obj}(\mathcal{C})\)</span>.</p></li>
 <li><p>For each pair of objects <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, there is a set <span class="math inline">\(\operatorname{Hom}_{\mathcal{C}}(x, y)\)</span> containing the <em>morphisms</em> with <em>source</em> <span class="math inline">\(x\)</span> and <em>target</em> <span class="math inline">\(y\)</span> (morphisms are also called <em>arrows</em>).</p></li>
-<li><p>For any pair of morphisms <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> such that the target of <span class="math inline">\(f\)</span> is equal to the source of <span class="math inline">\(g\)</span>, there is a morphism <span class="math inline">\(g \circ f\)</span> (or simply <span class="math inline">\(gf\)</span>) called the <em>composition</em> of <span class="math inline">\(f\)</span> with <span class="math inline">\(g\)</span>. This morphism shares its source with that of <span class="math inline">\(f\)</span> and its target with that of <span class="math inline">\(g\)</span>.</p></li>
+<li><p>For any pair of morphisms <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> such that the target of <span class="math inline">\(f\)</span> is equal to the source of <span class="math inline">\(g\)</span> there is a morphism <span class="math inline">\(g \circ f\)</span> (or simply <span class="math inline">\(gf\)</span>) called the <em>composition</em> of <span class="math inline">\(f\)</span> with <span class="math inline">\(g\)</span>. This morphism shares its source with that of <span class="math inline">\(f\)</span> and its target with that of <span class="math inline">\(g\)</span>.</p></li>
 </ol>
 <p>Additionally, the following properties must be satisfied:</p>
 <ol type="1">
@@ -272,8 +272,18 @@ window.Quarto = {
 <section id="our-goal" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="our-goal"><span class="header-section-number">1.4</span> Our Goal</h2>
 <p>This is meant to be a very approachable introduction to category theory. All that is needed to progress through these notes is a persisting curiosity. Ideally, one is comfortable with sets and functions between them, but beyond that not much else is required. There are more sections of the notes which may assume more background, but these are clearly marked and can be skipped without disrupting the flow of the material. Every such section is indicated like so:</p>
-<div class="{callout-warning}">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>This section assumes prior knowledge. It may be safely skipped.</p>
+</div>
 </div>
 <p>These sections will typically be found near the end of each chapter.</p>
 
