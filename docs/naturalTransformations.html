@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Partially Ordered Sets – Categories for the Curious</title>
+<title>8&nbsp; Groups – Categories for the Curious</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,8 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./groups.html" rel="next">
-<link href="./sets.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./functors.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -91,35 +71,6 @@ div.csl-indent {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -132,7 +83,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./posets.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Partially Ordered Sets</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./naturalTransformations.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groups</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -177,7 +128,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posets.html" class="sidebar-item-text sidebar-link active">
+  <a href="./posets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Partially Ordered Sets</span></span></a>
   </div>
 </li>
@@ -207,7 +158,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./naturalTransformations.html" class="sidebar-item-text sidebar-link">
+  <a href="./naturalTransformations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groups</span></span></a>
   </div>
 </li>
@@ -222,23 +173,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#the-divides-relation" id="toc-the-divides-relation" class="nav-link active" data-scroll-target="#the-divides-relation"><span class="header-section-number">3.1</span> The “Divides” Relation</a></li>
-  <li><a href="#defining-posets" id="toc-defining-posets" class="nav-link" data-scroll-target="#defining-posets"><span class="header-section-number">3.2</span> Defining Posets</a></li>
-  <li><a href="#advanced-exercises" id="toc-advanced-exercises" class="nav-link" data-scroll-target="#advanced-exercises"><span class="header-section-number">3.3</span> Advanced Exercises</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Partially Ordered Sets</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groups</span></h1>
 </div>
 
 
@@ -255,97 +198,8 @@ window.Quarto = {
 </header>
 
 
-<section id="the-divides-relation" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="the-divides-relation"><span class="header-section-number">3.1</span> The “Divides” Relation</h2>
-<div id="def-divides" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3.1</strong></span> Let <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> be integers. We say <span class="math inline">\(m\)</span> <em>divides</em> <span class="math inline">\(n\)</span>, and we write <span class="math inline">\(m \mid n\)</span> if there exists an integer <span class="math inline">\(q\)</span> such that <span class="math inline">\(mq = n\)</span>.</p>
-</div>
-<p>For example, <span class="math inline">\(3\)</span> divides <span class="math inline">\(6\)</span> since <span class="math inline">\(3 \cdot 2 = 6\)</span>, and <span class="math inline">\(-5\)</span> divides <span class="math inline">\(15\)</span> since <span class="math inline">\(-5 \cdot 3 = 15\)</span>.</p>
-<div id="exr">
-<p>Show that for any integer <span class="math inline">\(a\)</span> we have <span class="math inline">\(a \mid a\)</span>.</p>
-</div>
-<details>
-<summary>
-Solution
-</summary>
-We have <span class="math inline">\(a \cdot 1 = a\)</span>, so <span class="math inline">\(a\)</span> satisfies <a href="#def-divides" class="quarto-xref">Definition&nbsp;<span>3.1</span></a> with <span class="math inline">\(1\)</span> in place of <span class="math inline">\(q\)</span>.
-</details>
-<p>This is called <em>reflexivity</em>, and we say that <span class="math inline">\(\mid\)</span> is <em>reflexive</em> because it satisfies this property.</p>
-<p>Another important note about the “divides” relation is that to say “<span class="math inline">\(a\)</span> divides <span class="math inline">\(b\)</span>” is not the same as saying “<span class="math inline">\(b/a\)</span> is an integer.” The latter is a statement about the result of applying the division binary <em>operation</em> to <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The number <span class="math inline">\(0\)</span> is what primarily causes issues here: “<span class="math inline">\(0\)</span> divides <span class="math inline">\(0\)</span>” is true, since <span class="math inline">\(0 \cdot q = 0\)</span> for any number <span class="math inline">\(q\)</span>. Meanwhile, <span class="math inline">\(0/0\)</span> is undefined.</p>
-<div id="exr">
-<p>Show that if <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> are integers, and <span class="math inline">\(a \mid b\)</span> and <span class="math inline">\(b \mid c\)</span>, then <span class="math inline">\(a \mid c\)</span>.</p>
-</div>
-<details>
-<summary>
-Solution
-</summary>
-If <span class="math inline">\(a \mid b\)</span>, then there exists an integer <span class="math inline">\(k_1\)</span> such that <span class="math inline">\(a k_1 = b\)</span>. If <span class="math inline">\(b \mid c\)</span>, then there exists an integer <span class="math inline">\(k_2\)</span> such that <span class="math inline">\(b k_2 = c\)</span>. Hence, <span class="math inline">\(a (k_1 k_2) = (a k_1) k_2 = b k_2 = c\)</span>. So <span class="math inline">\(a\)</span> divides <span class="math inline">\(c\)</span> with <span class="math inline">\(k_1 k_2\)</span> in place of <span class="math inline">\(q\)</span> in <a href="#def-divides" class="quarto-xref">Definition&nbsp;<span>3.1</span></a>.
-</details>
-<p>This property is called <em>transitivity</em>, and we say that <span class="math inline">\(\mid\)</span> is a <em>transitive</em> relation on the integers.</p>
-<p>For all that follows, we denote by <span class="math inline">\(\mathbb{N}\)</span> the <em>natural numbers</em>, consisting of the non-negative integers <span class="math inline">\(0, 1, 2, \dots\)</span>. Take special care that we are including zero in this set.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> It will soon be apparent why we do this.</p>
-<div id="exr">
-<p>Show that for natural numbers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, if <span class="math inline">\(a \mid b\)</span> and <span class="math inline">\(b \mid a\)</span>, then <span class="math inline">\(a = b\)</span>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-</div>
-<details>
-<summary>
-Solution
-</summary>
-<p>If <span class="math inline">\(a \mid b\)</span>, then there exists a natural number <span class="math inline">\(k_1\)</span> such that <span class="math inline">\(a k_1 = b\)</span>. Similarly, <span class="math inline">\(b \mid a\)</span> implies there exists a natural number <span class="math inline">\(k_2\)</span> such that <span class="math inline">\(b k_2 = a\)</span>. Hence, <span class="math inline">\(b = a k_1 = b k_1 k_2\)</span>. We may similarly show that <span class="math inline">\(a = k_1 k_2 a\)</span>. The first equation tells us that <span class="math inline">\(b (1 - k_1 k_2) = 0\)</span>. Then either <span class="math inline">\(b = 0\)</span> or <span class="math inline">\(k_1 = k_2 = 1\)</span>.</p>
-<p>If <span class="math inline">\(b = 0\)</span>, then because <span class="math inline">\(a k_1 = b\)</span> we have either <span class="math inline">\(a = 0\)</span> (and thus <span class="math inline">\(a = b\)</span>), or we have <span class="math inline">\(k_1 = 0\)</span>. This would imply that <span class="math inline">\(a = k_1 k_2 a = 0 \cdot k_2 a = 0\)</span>. So <span class="math inline">\(a = b = 0\)</span>.</p>
-If <span class="math inline">\(b \neq 0\)</span> (i.e., <span class="math inline">\(k_1 = k_2 = 1\)</span>), then certainly <span class="math inline">\(a = 1 \cdot a = a k_1 = b\)</span>. In either case, <span class="math inline">\(a = b\)</span>.
-</details>
-<p>This property is known as <em>antisymmetry</em>, and we say that <span class="math inline">\(\mid\)</span> is an <em>antisymmetric</em> relation on <span class="math inline">\(\mathbb{N}\)</span>.</p>
-<div id="exr">
-<p>Give an example of a pair of integers for which <span class="math inline">\(a \mid b\)</span> and <span class="math inline">\(b \mid a\)</span>, yet <span class="math inline">\(a \neq b\)</span>.</p>
-</div>
-</section>
-<section id="defining-posets" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="defining-posets"><span class="header-section-number">3.2</span> Defining Posets</h2>
-<p>Given a set <span class="math inline">\(X\)</span> and a binary relation <span class="math inline">\(\preccurlyeq\)</span> defined on <span class="math inline">\(X\)</span>, we say that <span class="math inline">\((X, \preccurlyeq)\)</span> is a <em>partially ordered set</em> and that <span class="math inline">\(\preccurlyeq\)</span> is a <em>partial order</em> on <span class="math inline">\(X\)</span> if the relation <span class="math inline">\(\preccurlyeq\)</span> is reflexive, antisymmetric, and transitive.</p>
-<p>We will use <span class="math inline">\(\preccurlyeq\)</span> to denote an arbitrary partial order. The set <span class="math inline">\((\mathbb{N}, \mid)\)</span> is a poset, since we verified that <span class="math inline">\(\mid\)</span> is reflexive, transitive, and antisymmetric on <span class="math inline">\(\mathbb{N}\)</span> in the previous section. On the other hand, <span class="math inline">\((\mathbb{Z}, \mid)\)</span> is not a poset, since <span class="math inline">\(\mid\)</span> is not antisymmetric if we allow both positive and negative integers.</p>
-<div id="exr">
-<p>Show that the following are posets:</p>
-<ol type="1">
-<li><p><span class="math inline">\((\mathbb{Z}, \leq)\)</span>.</p></li>
-<li><p>For an arbitrary set <span class="math inline">\(X\)</span>, <span class="math inline">\((\mathscr{P}(X), \subseteq)\)</span>, where <span class="math inline">\(\mathscr{P}(X)\)</span> is the <em>power set</em> of <span class="math inline">\(X\)</span>, the set of all of its subsets.</p></li>
-<li><p><span class="math inline">\((\mathbb{C}, \preccurlyeq)\)</span>, where <span class="math inline">\(a + bi \preccurlyeq c + di\)</span> if and only if either <span class="math inline">\(a \leq c\)</span>, or <span class="math inline">\(a = c\)</span> while <span class="math inline">\(b \leq d\)</span> (this is called the “lexicographic order” on the complex numbers).</p></li>
-<li><p>Given a vector space <span class="math inline">\(V\)</span>, the subspaces of <span class="math inline">\(V\)</span> form a partially ordered set under the subspace relation.</p></li>
-</ol>
-</div>
-</section>
-<section id="advanced-exercises" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="advanced-exercises"><span class="header-section-number">3.3</span> Advanced Exercises</h2>
-<p>These assume prior knowledge and may be safely skipped.</p>
-<div id="exr">
-<p>Show that the following are posets:</p>
-<ol type="1">
-<li><p>For an arbitrary group <span class="math inline">\(G\)</span>, the pair <span class="math inline">\((\mathscr{A}(G), \leq)\)</span> is a partially ordered set, where <span class="math inline">\(\mathscr{A}(G)\)</span> consists of the subgroups of <span class="math inline">\(G\)</span> and <span class="math inline">\(\leq\)</span> is the “subgroup” relation.</p></li>
-<li><p>For a path-connected, locally path-connected, semilocally simply-connected topological space <span class="math inline">\(X\)</span> with a distinguished basepoint <span class="math inline">\(x_0 \in X\)</span>, the set of basepoint-preserving isomorphism classes of path-connected covering spaces <span class="math inline">\(p : (\tilde{X}, \tilde{x}_0 \to (X, x_0)\)</span> is a poset under the relation: <span class="math inline">\((\tilde{X}_1, \tilde{x}_1) \preccurlyeq (\tilde{X}_2, \tilde{x}_2)\)</span> if and only if there exists a basepoint-preserving covering map <span class="math inline">\(f : \tilde{X}_2 \to \tilde{X}_1\)</span> such that <span class="math inline">\(p_1 \circ f = p_2\)</span> (this can be rephrased a bit less precisely by saying <span class="math inline">\(X_2\)</span> is a covering of <span class="math inline">\(X_1\)</span>) <span class="citation" data-cites="Hatcher2002">(<a href="references.html#ref-Hatcher2002" role="doc-biblioref">Hatcher 2002, 68</a>)</span>.</p></li>
-<li><p>Given a finite, Galois field extension <span class="math inline">\(E/F\)</span>, there is a partial order on the intermediate fields <span class="math inline">\(F \subseteq K \subseteq E\)</span> under the inclusion relation: <span class="math inline">\(K_1 \preccurlyeq K_2\)</span> if and only if <span class="math inline">\(K_1 \subseteq K_2\)</span>.</p></li>
-</ol>
-</div>
-<details>
-<summary>
-Solution
-</summary>
-Every group is a subgroup of itself, so the subgroup relation is reflexive.
-</details>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-Hatcher2002" class="csl-entry" role="listitem">
-Hatcher, Allen. 2002. <em>Algebraic Topology</em>. USA: Cambridge University Press. <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html">https://pi.math.cornell.edu/~hatcher/AT/ATpage.html</a>.
-</div>
-</div>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>A binary operation on a set <span class="math inline">\(X\)</span> is a mapping <span class="math inline">\(X \times X \to X\)</span>. A relation is not a mapping; it is simply a statement (something that is either true or false).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>This differs from another convention that excludes zero, which we may be used to.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>If we allow <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> to be negative, then the most general statement we can make is that the magnitudes are equal.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -750,13 +604,13 @@ Hatcher, Allen. 2002. <em>Algebraic Topology</em>. USA: Cambridge University Pre
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./sets.html" class="pagination-link" aria-label="Groups">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Groups</span></span>
+      <a href="./functors.html" class="pagination-link" aria-label="Groups">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Groups</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./groups.html" class="pagination-link" aria-label="Groups">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Groups</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,2 +1,2 @@
-# Groups
+# The Abstract Definition of a Category
 
