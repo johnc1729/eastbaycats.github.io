@@ -1,2 +1,20 @@
 # Introduction
 
+
+## What is a category?
+
+We will learn the [abstract definition of a category](./abstractCategories.qmd) later. However, it would be counterproductive to state the precise definition right now.
+
+## Why would we want to learn this?
+
+Throughout our mathematical education, we have likely encountered many types of mathematical objects (e.g., groups, rings, vector spaces, fields, topological spaces, sets, functions, manifolds). We might have learned that a group is "a *set* equipped with an associative binary operation having an identity element, and for which every element has an inverse," or that a "vector space is a *set* equipped with the operations of vector addition and scalar multiplication satisfying the usual axioms." It may have been a while since we've dealt with these definitions, or we may not have learned them at all. That is okay. What is important to focus on now is that both of these objects are defined as a *set* equipped with some additional structure. We have defined them in terms of "sets."
+
+So what is a "set," exactly? We might see it defined as "a collection of objects, which are called its elements," which then begs the question: what is a "collection"? How is it that we can give such precise definitions of all of the structures mentioned above (vector spaces, groups, rings, etc.), yet we seem to have difficulty making precise the concept of a set, on which the definitions of all of these structures rely?
+
+The uncomfortable truth is that modern mathematics, with its rigorous definitions and axioms, cannot exist *ex nihilo*. To formulate a rigorous definition, we must first precisely define each term within that definition, and so on for the definitions of each of those terms. This process cannot end without either defining two objects "circularly," such that some object is defined in terms of another and vice versa, or declaring once and for all that certain objects are atomic, and they cannot be defined in terms of any other object.
+
+Categories constitute an alternative foundation for mathematics; all of the structures mentioned above could instead be defined in terms of categories. While 
+
+## Our Goal
+
+

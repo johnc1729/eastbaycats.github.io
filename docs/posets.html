@@ -172,7 +172,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./sets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Groups</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sets</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -190,25 +190,25 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./vectorSpaces.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Groups</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Vector Spaces</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./abstractCategories.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Groups</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Abstract Definition of a Category</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./functors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Groups</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Functors</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./naturalTransformations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groups</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Natural Transformations</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -261,8 +261,8 @@ window.Quarto = {
 <p><span class="theorem-title"><strong>Definition 3.1</strong></span> Let <span class="math inline">\(m\)</span> and <span class="math inline">\(n\)</span> be integers. We say <span class="math inline">\(m\)</span> <em>divides</em> <span class="math inline">\(n\)</span>, and we write <span class="math inline">\(m \mid n\)</span> if there exists an integer <span class="math inline">\(q\)</span> such that <span class="math inline">\(mq = n\)</span>.</p>
 </div>
 <p>For example, <span class="math inline">\(3\)</span> divides <span class="math inline">\(6\)</span> since <span class="math inline">\(3 \cdot 2 = 6\)</span>, and <span class="math inline">\(-5\)</span> divides <span class="math inline">\(15\)</span> since <span class="math inline">\(-5 \cdot 3 = 15\)</span>.</p>
-<div id="exr">
-<p>Show that for any integer <span class="math inline">\(a\)</span> we have <span class="math inline">\(a \mid a\)</span>.</p>
+<div id="exr-3.1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.1</strong></span> Show that for any integer <span class="math inline">\(a\)</span> we have <span class="math inline">\(a \mid a\)</span>.</p>
 </div>
 <details>
 <summary>
@@ -272,8 +272,8 @@ We have <span class="math inline">\(a \cdot 1 = a\)</span>, so <span class="math
 </details>
 <p>This is called <em>reflexivity</em>, and we say that <span class="math inline">\(\mid\)</span> is <em>reflexive</em> because it satisfies this property.</p>
 <p>Another important note about the “divides” relation is that to say “<span class="math inline">\(a\)</span> divides <span class="math inline">\(b\)</span>” is not the same as saying “<span class="math inline">\(b/a\)</span> is an integer.” The latter is a statement about the result of applying the division binary <em>operation</em> to <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The number <span class="math inline">\(0\)</span> is what primarily causes issues here: “<span class="math inline">\(0\)</span> divides <span class="math inline">\(0\)</span>” is true, since <span class="math inline">\(0 \cdot q = 0\)</span> for any number <span class="math inline">\(q\)</span>. Meanwhile, <span class="math inline">\(0/0\)</span> is undefined.</p>
-<div id="exr">
-<p>Show that if <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> are integers, and <span class="math inline">\(a \mid b\)</span> and <span class="math inline">\(b \mid c\)</span>, then <span class="math inline">\(a \mid c\)</span>.</p>
+<div id="exr-3.2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.2</strong></span> Show that if <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> are integers, and <span class="math inline">\(a \mid b\)</span> and <span class="math inline">\(b \mid c\)</span>, then <span class="math inline">\(a \mid c\)</span>.</p>
 </div>
 <details>
 <summary>
@@ -283,8 +283,8 @@ If <span class="math inline">\(a \mid b\)</span>, then there exists an integer <
 </details>
 <p>This property is called <em>transitivity</em>, and we say that <span class="math inline">\(\mid\)</span> is a <em>transitive</em> relation on the integers.</p>
 <p>For all that follows, we denote by <span class="math inline">\(\mathbb{N}\)</span> the <em>natural numbers</em>, consisting of the non-negative integers <span class="math inline">\(0, 1, 2, \dots\)</span>. Take special care that we are including zero in this set.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> It will soon be apparent why we do this.</p>
-<div id="exr">
-<p>Show that for natural numbers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, if <span class="math inline">\(a \mid b\)</span> and <span class="math inline">\(b \mid a\)</span>, then <span class="math inline">\(a = b\)</span>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div id="exr-3.3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.3</strong></span> Show that for natural numbers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, if <span class="math inline">\(a \mid b\)</span> and <span class="math inline">\(b \mid a\)</span>, then <span class="math inline">\(a = b\)</span>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 </div>
 <details>
 <summary>
@@ -295,16 +295,16 @@ Solution
 If <span class="math inline">\(b \neq 0\)</span> (i.e., <span class="math inline">\(k_1 = k_2 = 1\)</span>), then certainly <span class="math inline">\(a = 1 \cdot a = a k_1 = b\)</span>. In either case, <span class="math inline">\(a = b\)</span>.
 </details>
 <p>This property is known as <em>antisymmetry</em>, and we say that <span class="math inline">\(\mid\)</span> is an <em>antisymmetric</em> relation on <span class="math inline">\(\mathbb{N}\)</span>.</p>
-<div id="exr">
-<p>Give an example of a pair of integers for which <span class="math inline">\(a \mid b\)</span> and <span class="math inline">\(b \mid a\)</span>, yet <span class="math inline">\(a \neq b\)</span>.</p>
+<div id="exr-3.4" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.4</strong></span> Give an example of a pair of integers for which <span class="math inline">\(a \mid b\)</span> and <span class="math inline">\(b \mid a\)</span>, yet <span class="math inline">\(a \neq b\)</span>.</p>
 </div>
 </section>
 <section id="defining-posets" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="defining-posets"><span class="header-section-number">3.2</span> Defining Posets</h2>
 <p>Given a set <span class="math inline">\(X\)</span> and a binary relation <span class="math inline">\(\preccurlyeq\)</span> defined on <span class="math inline">\(X\)</span>, we say that <span class="math inline">\((X, \preccurlyeq)\)</span> is a <em>partially ordered set</em> and that <span class="math inline">\(\preccurlyeq\)</span> is a <em>partial order</em> on <span class="math inline">\(X\)</span> if the relation <span class="math inline">\(\preccurlyeq\)</span> is reflexive, antisymmetric, and transitive.</p>
-<p>We will use <span class="math inline">\(\preccurlyeq\)</span> to denote an arbitrary partial order. The set <span class="math inline">\((\mathbb{N}, \mid)\)</span> is a poset, since we verified that <span class="math inline">\(\mid\)</span> is reflexive, transitive, and antisymmetric on <span class="math inline">\(\mathbb{N}\)</span> in the previous section. On the other hand, <span class="math inline">\((\mathbb{Z}, \mid)\)</span> is not a poset, since <span class="math inline">\(\mid\)</span> is not antisymmetric if we allow both positive and negative integers.</p>
-<div id="exr">
-<p>Show that the following are posets:</p>
+<p>We will use <span class="math inline">\(\preccurlyeq\)</span> to denote an arbitrary partial order. The set <span class="math inline">\((\mathbb{N}, \mid)\)</span> is a poset, since we verified that <span class="math inline">\(\mid\)</span> is reflexive, transitive, and antisymmetric on <span class="math inline">\(\mathbb{N}\)</span> in the previous section. On the other hand, <span class="math inline">\((\mathbb{Z}, \mid)\)</span> is not a poset, since <span class="math inline">\(\mid\)</span> is not antisymmetric if we allow both positive and negative integers (see <a href="#exr-3.4" class="quarto-xref">Exercise&nbsp;<span>3.4</span></a>).</p>
+<div id="exr-3.5" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.5</strong></span> Show that the following are posets:</p>
 <ol type="1">
 <li><p><span class="math inline">\((\mathbb{Z}, \leq)\)</span>.</p></li>
 <li><p>For an arbitrary set <span class="math inline">\(X\)</span>, <span class="math inline">\((\mathscr{P}(X), \subseteq)\)</span>, where <span class="math inline">\(\mathscr{P}(X)\)</span> is the <em>power set</em> of <span class="math inline">\(X\)</span>, the set of all of its subsets.</p></li>
@@ -316,8 +316,8 @@ If <span class="math inline">\(b \neq 0\)</span> (i.e., <span class="math inline
 <section id="advanced-exercises" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="advanced-exercises"><span class="header-section-number">3.3</span> Advanced Exercises</h2>
 <p>These assume prior knowledge and may be safely skipped.</p>
-<div id="exr">
-<p>Show that the following are posets:</p>
+<div id="exr-3.6" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.6</strong></span> Show that the following are posets:</p>
 <ol type="1">
 <li><p>For an arbitrary group <span class="math inline">\(G\)</span>, the pair <span class="math inline">\((\mathscr{A}(G), \leq)\)</span> is a partially ordered set, where <span class="math inline">\(\mathscr{A}(G)\)</span> consists of the subgroups of <span class="math inline">\(G\)</span> and <span class="math inline">\(\leq\)</span> is the “subgroup” relation.</p></li>
 <li><p>For a path-connected, locally path-connected, semilocally simply-connected topological space <span class="math inline">\(X\)</span> with a distinguished basepoint <span class="math inline">\(x_0 \in X\)</span>, the set of basepoint-preserving isomorphism classes of path-connected covering spaces <span class="math inline">\(p : (\tilde{X}, \tilde{x}_0 \to (X, x_0)\)</span> is a poset under the relation: <span class="math inline">\((\tilde{X}_1, \tilde{x}_1) \preccurlyeq (\tilde{X}_2, \tilde{x}_2)\)</span> if and only if there exists a basepoint-preserving covering map <span class="math inline">\(f : \tilde{X}_2 \to \tilde{X}_1\)</span> such that <span class="math inline">\(p_1 \circ f = p_2\)</span> (this can be rephrased a bit less precisely by saying <span class="math inline">\(X_2\)</span> is a covering of <span class="math inline">\(X_1\)</span>) <span class="citation" data-cites="Hatcher2002">(<a href="references.html#ref-Hatcher2002" role="doc-biblioref">Hatcher 2002, 68</a>)</span>.</p></li>
@@ -750,8 +750,8 @@ Hatcher, Allen. 2002. <em>Algebraic Topology</em>. USA: Cambridge University Pre
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./sets.html" class="pagination-link" aria-label="Groups">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Groups</span></span>
+      <a href="./sets.html" class="pagination-link" aria-label="Sets">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Sets</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
