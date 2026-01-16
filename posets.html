@@ -234,7 +234,9 @@ window.Quarto = {
   <ul>
   <li><a href="#the-divides-relation" id="toc-the-divides-relation" class="nav-link active" data-scroll-target="#the-divides-relation"><span class="header-section-number">3.1</span> The “Divides” Relation</a></li>
   <li><a href="#defining-posets" id="toc-defining-posets" class="nav-link" data-scroll-target="#defining-posets"><span class="header-section-number">3.2</span> Defining Posets</a></li>
-  <li><a href="#advanced-exercises" id="toc-advanced-exercises" class="nav-link" data-scroll-target="#advanced-exercises"><span class="header-section-number">3.3</span> Advanced Exercises</a></li>
+  <li><a href="#the-opposite-order" id="toc-the-opposite-order" class="nav-link" data-scroll-target="#the-opposite-order"><span class="header-section-number">3.3</span> The Opposite Order</a></li>
+  <li><a href="#upper-and-lower-bounds" id="toc-upper-and-lower-bounds" class="nav-link" data-scroll-target="#upper-and-lower-bounds"><span class="header-section-number">3.4</span> Upper and Lower Bounds</a></li>
+  <li><a href="#advanced-exercises" id="toc-advanced-exercises" class="nav-link" data-scroll-target="#advanced-exercises"><span class="header-section-number">3.5</span> Advanced Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -308,18 +310,36 @@ If <span class="math inline">\(b \neq 0\)</span> (i.e., <span class="math inline
 <h2 data-number="3.2" class="anchored" data-anchor-id="defining-posets"><span class="header-section-number">3.2</span> Defining Posets</h2>
 <p>Given a set <span class="math inline">\(X\)</span> and a binary relation <span class="math inline">\(\preccurlyeq\)</span> defined on <span class="math inline">\(X\)</span>, we say that <span class="math inline">\((X, \preccurlyeq)\)</span> is a <em>partially ordered set</em> and that <span class="math inline">\(\preccurlyeq\)</span> is a <em>partial order</em> on <span class="math inline">\(X\)</span> if the relation <span class="math inline">\(\preccurlyeq\)</span> is reflexive, antisymmetric, and transitive.</p>
 <p>We will use <span class="math inline">\(\preccurlyeq\)</span> to denote an arbitrary partial order. The set <span class="math inline">\((\mathbb{N}, \mid)\)</span> is a poset, since we verified that <span class="math inline">\(\mid\)</span> is reflexive, transitive, and antisymmetric on <span class="math inline">\(\mathbb{N}\)</span> in the previous section. On the other hand, <span class="math inline">\((\mathbb{Z}, \mid)\)</span> is not a poset, since <span class="math inline">\(\mid\)</span> is not antisymmetric if we allow both positive and negative integers (see <a href="#exr-3.4" class="quarto-xref">Exercise&nbsp;<span>3.4</span></a>).</p>
+<p>Note that for a given poset, it may be the case that for some <span class="math inline">\(x,y \in X\)</span> we have neither <span class="math inline">\(x \preccurlyeq y\)</span> nor <span class="math inline">\(y \preccurlyeq x\)</span>. In this case, we say that <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are <em>incomparable</em>.</p>
 <div id="exr-3.5" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.5</strong></span> Show that the following are posets:</p>
+<p><span class="theorem-title"><strong>Exercise 3.5</strong></span> &nbsp;</p>
 <ol type="1">
-<li><p><span class="math inline">\((\mathbb{Z}, \leq)\)</span>.</p></li>
-<li><p>For an arbitrary set <span class="math inline">\(X\)</span>, <span class="math inline">\((\mathscr{P}(X), \subseteq)\)</span>, where <span class="math inline">\(\mathscr{P}(X)\)</span> is the <em>power set</em> of <span class="math inline">\(X\)</span>, the set of all of its subsets.</p></li>
-<li><p><span class="math inline">\((\mathbb{C}, \preccurlyeq)\)</span>, where <span class="math inline">\(a + bi \preccurlyeq c + di\)</span> if and only if either <span class="math inline">\(a \leq c\)</span>, or <span class="math inline">\(a = c\)</span> while <span class="math inline">\(b \leq d\)</span> (this is called the “lexicographic order” on the complex numbers).</p></li>
-<li><p>Given a vector space <span class="math inline">\(V\)</span>, the subspaces of <span class="math inline">\(V\)</span> form a partially ordered set under the subspace relation.</p></li>
+<li><p>Show that <span class="math inline">\((\mathbb{Z}, \leq)\)</span> is a poset, and every pair of elements in <span class="math inline">\(\mathbb{Z}\)</span> are comparable.</p></li>
+<li><p>Show that for an arbitrary set <span class="math inline">\(X\)</span>, we have <span class="math inline">\((\mathscr{P}(X), \subseteq)\)</span> is a poset, where <span class="math inline">\(\mathscr{P}(X)\)</span> is the <em>power set</em> of <span class="math inline">\(X\)</span>, the set of all of its subsets. Show that if <span class="math inline">\(|X| \geq 3\)</span>, then there exist incomparable elements of <span class="math inline">\(\mathscr{P}(X)\)</span>.</p></li>
+<li><p>Show that <span class="math inline">\((\mathbb{C}, \preccurlyeq)\)</span> is a poset, where <span class="math inline">\(a + bi \preccurlyeq c + di\)</span> if and only if either <span class="math inline">\(a \leq c\)</span>, or <span class="math inline">\(a = c\)</span> while <span class="math inline">\(b \leq d\)</span> (this is called the “lexicographic order” on the complex numbers). Show that every pair of elements of <span class="math inline">\(\mathbb{C}\)</span> are comparable under this order.</p></li>
 </ol>
 </div>
 </section>
-<section id="advanced-exercises" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="advanced-exercises"><span class="header-section-number">3.3</span> Advanced Exercises</h2>
+<section id="the-opposite-order" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="the-opposite-order"><span class="header-section-number">3.3</span> The Opposite Order</h2>
+<p>For every poset <span class="math inline">\((X, \preccurlyeq)\)</span> there is a corresponding poset called the <em>opposite</em> poset. The underlying set <span class="math inline">\(X\)</span> remains the same, but we define a new order <span class="math inline">\(\preccurlyeq^{\text{op}}\)</span> on <span class="math inline">\(X\)</span> by <span class="math inline">\(x \preccurlyeq^{\text{op}} y\)</span> if and only if <span class="math inline">\(y \preccurlyeq x\)</span>. The opposite poset for <span class="math inline">\((\mathbb{Z}, \leq)\)</span> from <a href="#exr-3.5" class="quarto-xref">Exercise&nbsp;<span>3.5</span></a> is simply <span class="math inline">\((\mathbb{Z}, \geq)\)</span>.</p>
+</section>
+<section id="upper-and-lower-bounds" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="upper-and-lower-bounds"><span class="header-section-number">3.4</span> Upper and Lower Bounds</h2>
+<p>Given a subset <span class="math inline">\(A \subseteq X\)</span> of a poset <span class="math inline">\((X, \preccurlyeq)\)</span>, we say that <span class="math inline">\(z\)</span> is an <em>upper bound</em> of <span class="math inline">\(A\)</span> if for each <span class="math inline">\(x \in A\)</span> we have <span class="math inline">\(x \preccurlyeq z\)</span>. We say <span class="math inline">\(z\)</span> is a <em>lower bound</em> of <span class="math inline">\(A\)</span> if for each <span class="math inline">\(x \in A\)</span> we have <span class="math inline">\(z \preccurlyeq x\)</span>. If <span class="math inline">\(A = X\)</span>, then <span class="math inline">\(z\)</span> is called a <em>maximum element</em> if it is an upper bound and a <em>minimum element</em> if it is a lower bound.</p>
+<div id="exr-3.6" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.6</strong></span> Show that the poset <span class="math inline">\((\mathbb{N}, \mid)\)</span> has a maximum and a minimum element.</p>
+</div>
+<details>
+<summary>
+Solution
+</summary>
+<p>The minimum element is <span class="math inline">\(1\)</span>, since for all <span class="math inline">\(x \in \mathbb{N}\)</span> we have <span class="math inline">\(1 \mid x\)</span>. The maximum element is <span class="math inline">\(0\)</span>, since for all <span class="math inline">\(x \in \mathbb{N}\)</span> we have <span class="math inline">\(x \mid 0\)</span>.</p>
+Note that if we excluded zero from our definition of <span class="math inline">\(\mathbb{N}\)</span>, then we would only have a minimum element (and no maximum element).
+</details>
+</section>
+<section id="advanced-exercises" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="advanced-exercises"><span class="header-section-number">3.5</span> Advanced Exercises</h2>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -333,12 +353,15 @@ Warning
 <p>This section assumes prior knowledge. It may be safely skipped.</p>
 </div>
 </div>
-<div id="exr-3.6" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 3.6</strong></span> Show that the following are posets:</p>
+<div id="exr-3.7" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 3.7</strong></span> Show that the following are posets:</p>
 <ol type="1">
 <li><p>For an arbitrary group <span class="math inline">\(G\)</span>, the pair <span class="math inline">\((\mathscr{A}(G), \leq)\)</span> is a partially ordered set, where <span class="math inline">\(\mathscr{A}(G)\)</span> consists of the subgroups of <span class="math inline">\(G\)</span> and <span class="math inline">\(\leq\)</span> is the “subgroup” relation.</p></li>
-<li><p>For a path-connected, locally path-connected, semilocally simply-connected topological space <span class="math inline">\(X\)</span> with a distinguished basepoint <span class="math inline">\(x_0 \in X\)</span>, the set of basepoint-preserving isomorphism classes of path-connected covering spaces <span class="math inline">\(p : (\tilde{X}, \tilde{x}_0 \to (X, x_0)\)</span> is a poset under the relation: <span class="math inline">\((\tilde{X}_1, \tilde{x}_1) \preccurlyeq (\tilde{X}_2, \tilde{x}_2)\)</span> if and only if there exists a basepoint-preserving covering map <span class="math inline">\(f : \tilde{X}_2 \to \tilde{X}_1\)</span> such that <span class="math inline">\(p_1 \circ f = p_2\)</span> (this can be rephrased a bit less precisely by saying <span class="math inline">\(X_2\)</span> is a covering of <span class="math inline">\(X_1\)</span>) <span class="citation" data-cites="Hatcher2002">(<a href="references.html#ref-Hatcher2002" role="doc-biblioref">Hatcher 2002, 68</a>)</span>.</p></li>
+<li><p>For a path-connected, locally path-connected, semilocally simply-connected topological space <span class="math inline">\(X\)</span> with a distinguished basepoint <span class="math inline">\(x_0 \in X\)</span>, the set of basepoint-preserving isomorphism classes of path-connected covering spaces <span class="math inline">\(p : (\tilde{X}, \tilde{x}_0) \to (X, x_0)\)</span> is a poset under the relation</p>
+<p><span class="math display">\[p_1 : (\tilde{X}_1, \tilde{x}_1) \to (X, x_0) \preccurlyeq p_2 : (\tilde{X}_2, \tilde{x}_2) \to (X, x_0)\]</span></p>
+<p>if and only if there exists a basepoint-preserving covering map <span class="math inline">\(f : \tilde{X}_2 \to \tilde{X}_1\)</span> such that <span class="math inline">\(p_1 \circ f = p_2\)</span> (this can be rephrased a bit less precisely by saying <span class="math inline">\(\tilde{X}_2\)</span> is a covering of <span class="math inline">\(\tilde{X}_1\)</span>) <span class="citation" data-cites="Hatcher2002">(<a href="references.html#ref-Hatcher2002" role="doc-biblioref">Hatcher 2002, 68</a>)</span>.</p></li>
 <li><p>Given a finite, Galois field extension <span class="math inline">\(E/F\)</span>, there is a partial order on the intermediate fields <span class="math inline">\(F \subseteq K \subseteq E\)</span> under the inclusion relation: <span class="math inline">\(K_1 \preccurlyeq K_2\)</span> if and only if <span class="math inline">\(K_1 \subseteq K_2\)</span>.</p></li>
+<li><p>Given a vector space <span class="math inline">\(V\)</span>, the subspaces of <span class="math inline">\(V\)</span> form a partially ordered set under the subspace relation.</p></li>
 </ol>
 </div>
 <details>
