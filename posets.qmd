@@ -65,21 +65,34 @@ Given a set $X$ and a binary relation $\preccurlyeq$ defined on $X$, we say that
 
 We will use $\preccurlyeq$ to denote an arbitrary partial order. The set $(\mathbb{N}, \mid)$ is a poset, since we verified that $\mid$ is reflexive, transitive, and antisymmetric on $\mathbb{N}$ in the previous section. On the other hand, $(\mathbb{Z}, \mid)$ is not a poset, since $\mid$ is not antisymmetric if we allow both positive and negative integers (see @exr-3.4).
 
+Note that for a given poset, it may be the case that for some $x,y \in X$ we have neither $x \preccurlyeq y$ nor $y \preccurlyeq x$. In this case, we say that $x$ and $y$ are *incomparable*.
+
 ::: {#exr-3.5}
-Show that the following are posets:
+1. Show that $(\mathbb{Z}, \leq)$ is a poset, and every pair of elements in $\mathbb{Z}$ are comparable.
 
-1. $(\mathbb{Z}, \leq)$.
+2. Show that for an arbitrary set $X$, we have $(\mathscr{P}(X), \subseteq)$ is a poset, where $\mathscr{P}(X)$ is the *power set* of $X$, the set of all of its subsets. Show that if $|X| \geq 3$, then there exist incomparable elements of $\mathscr{P}(X)$.
 
-2. For an arbitrary set $X$, $(\mathscr{P}(X), \subseteq)$, where $\mathscr{P}(X)$ is the *power set* of $X$, the set of all of its subsets.
-
-3. $(\mathbb{C}, \preccurlyeq)$, where $a + bi \preccurlyeq c + di$ if and only if either $a \leq c$, or $a = c$ while $b \leq d$ (this is called the "lexicographic order" on the complex numbers).
-
-4. Given a vector space $V$, the subspaces of $V$ form a partially ordered set under the subspace relation.
+3. Show that $(\mathbb{C}, \preccurlyeq)$ is a poset, where $a + bi \preccurlyeq c + di$ if and only if either $a \leq c$, or $a = c$ while $b \leq d$ (this is called the "lexicographic order" on the complex numbers). Show that every pair of elements of $\mathbb{C}$ are comparable under this order.
 :::
 
 ## The Opposite Order
 
-For every poset $(X, \preccurlyeq)$ there is a corresponding poset called the *opposite* poset. The underlying set $X$ remains the same, but we define a new order $\preccurlyeq^{\text{op}}$ on $X$ by $x \precurlyeq^{\text{op}} y$ if and only if $y \precurlyeq x$.
+For every poset $(X, \preccurlyeq)$ there is a corresponding poset called the *opposite* poset. The underlying set $X$ remains the same, but we define a new order $\preccurlyeq^{\text{op}}$ on $X$ by $x \preccurlyeq^{\text{op}} y$ if and only if $y \preccurlyeq x$. The opposite poset for $(\mathbb{Z}, \leq)$ from @exr-3.5 is simply $(\mathbb{Z}, \geq)$.
+
+## Upper and Lower Bounds
+
+Given a subset $A \subseteq X$ of a poset $(X, \preccurlyeq)$, we say that $z$ is an *upper bound* of $A$ if for each $x \in A$ we have $x \preccurlyeq z$. We say $z$ is a *lower bound* of $A$ if for each $x \in A$ we have $z \preccurlyeq x$. If $A = X$, then $z$ is called a *maximum element* if it is an upper bound and a *minimum element* if it is a lower bound.
+
+::: {#exr-3.6}
+Show that the poset $(\mathbb{N}, \mid)$ has a maximum and a minimum element.
+:::
+
+<details>
+<summary>Solution</summary>
+The minimum element is $1$, since for all $x \in \mathbb{N}$ we have $1 \mid x$. The maximum element is $0$, since for all $x \in \mathbb{N}$ we have $x \mid 0$.
+
+Note that if we excluded zero from our definition of $\mathbb{N}$, then we would only have a minimum element (and no maximum element).
+</details>
 
 ## Advanced Exercises
 
@@ -87,7 +100,7 @@ For every poset $(X, \preccurlyeq)$ there is a corresponding poset called the *o
 This section assumes prior knowledge. It may be safely skipped.
 :::
 
-::: {#exr-3.6}
+::: {#exr-3.7}
 Show that the following are posets:
 
 1. For an arbitrary group $G$, the pair $(\mathscr{A}(G), \leq)$ is a partially ordered set, where $\mathscr{A}(G)$ consists of the subgroups of $G$ and $\leq$ is the "subgroup" relation.
@@ -99,6 +112,8 @@ Show that the following are posets:
    if and only if there exists a basepoint-preserving covering map $f : \tilde{X}_2 \to \tilde{X}_1$ such that $p_1 \circ f = p_2$ (this can be rephrased a bit less precisely by saying $\tilde{X}_2$ is a covering of $\tilde{X}_1$) [@Hatcher2002, p. 68].
 
 3. Given a finite, Galois field extension $E/F$, there is a partial order on the intermediate fields $F \subseteq K \subseteq E$ under the inclusion relation: $K_1 \preccurlyeq K_2$ if and only if $K_1 \subseteq K_2$.
+
+4. Given a vector space $V$, the subspaces of $V$ form a partially ordered set under the subspace relation.
 :::
 
 <details>

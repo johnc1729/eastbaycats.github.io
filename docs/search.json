@@ -93,8 +93,8 @@
     "objectID": "posets.html#advanced-exercises",
     "href": "posets.html#advanced-exercises",
     "title": "3  Partially Ordered Sets",
-    "section": "3.3 Advanced Exercises",
-    "text": "3.3 Advanced Exercises\n\n\n\n\n\n\nWarning\n\n\n\nThis section assumes prior knowledge. It may be safely skipped.\n\n\n\nExercise 3.6 Show that the following are posets:\n\nFor an arbitrary group \\(G\\), the pair \\((\\mathscr{A}(G), \\leq)\\) is a partially ordered set, where \\(\\mathscr{A}(G)\\) consists of the subgroups of \\(G\\) and \\(\\leq\\) is the “subgroup” relation.\nFor a path-connected, locally path-connected, semilocally simply-connected topological space \\(X\\) with a distinguished basepoint \\(x_0 \\in X\\), the set of basepoint-preserving isomorphism classes of path-connected covering spaces \\(p : (\\tilde{X}, \\tilde{x}_0 \\to (X, x_0)\\) is a poset under the relation: \\((\\tilde{X}_1, \\tilde{x}_1) \\preccurlyeq (\\tilde{X}_2, \\tilde{x}_2)\\) if and only if there exists a basepoint-preserving covering map \\(f : \\tilde{X}_2 \\to \\tilde{X}_1\\) such that \\(p_1 \\circ f = p_2\\) (this can be rephrased a bit less precisely by saying \\(X_2\\) is a covering of \\(X_1\\)) (Hatcher 2002, 68).\nGiven a finite, Galois field extension \\(E/F\\), there is a partial order on the intermediate fields \\(F \\subseteq K \\subseteq E\\) under the inclusion relation: \\(K_1 \\preccurlyeq K_2\\) if and only if \\(K_1 \\subseteq K_2\\).\n\n\n\n\nSolution\n\nEvery group is a subgroup of itself, so the subgroup relation is reflexive.\n\n\n\n\n\nHatcher, Allen. 2002. Algebraic Topology. USA: Cambridge University Press. https://pi.math.cornell.edu/~hatcher/AT/ATpage.html.",
+    "section": "3.4 Advanced Exercises",
+    "text": "3.4 Advanced Exercises\n\n\n\n\n\n\nWarning\n\n\n\nThis section assumes prior knowledge. It may be safely skipped.\n\n\n\nExercise 3.6 Show that the following are posets:\n\nFor an arbitrary group \\(G\\), the pair \\((\\mathscr{A}(G), \\leq)\\) is a partially ordered set, where \\(\\mathscr{A}(G)\\) consists of the subgroups of \\(G\\) and \\(\\leq\\) is the “subgroup” relation.\nFor a path-connected, locally path-connected, semilocally simply-connected topological space \\(X\\) with a distinguished basepoint \\(x_0 \\in X\\), the set of basepoint-preserving isomorphism classes of path-connected covering spaces \\(p : (\\tilde{X}, \\tilde{x}_0) \\to (X, x_0)\\) is a poset under the relation\n\\[p_1 : (\\tilde{X}_1, \\tilde{x}_1) \\to (X, x_0) \\preccurlyeq p_2 : (\\tilde{X}_2, \\tilde{x}_2) \\to (X, x_0)\\]\nif and only if there exists a basepoint-preserving covering map \\(f : \\tilde{X}_2 \\to \\tilde{X}_1\\) such that \\(p_1 \\circ f = p_2\\) (this can be rephrased a bit less precisely by saying \\(\\tilde{X}_2\\) is a covering of \\(\\tilde{X}_1\\)) (Hatcher 2002, 68).\nGiven a finite, Galois field extension \\(E/F\\), there is a partial order on the intermediate fields \\(F \\subseteq K \\subseteq E\\) under the inclusion relation: \\(K_1 \\preccurlyeq K_2\\) if and only if \\(K_1 \\subseteq K_2\\).\n\n\n\n\nSolution\n\nEvery group is a subgroup of itself, so the subgroup relation is reflexive.\n\n\n\n\n\nHatcher, Allen. 2002. Algebraic Topology. USA: Cambridge University Press. https://pi.math.cornell.edu/~hatcher/AT/ATpage.html.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Partially Ordered Sets</span>"
     ]
@@ -117,6 +117,16 @@
     "text": "Hatcher, Allen. 2002. Algebraic Topology. USA: Cambridge\nUniversity Press. https://pi.math.cornell.edu/~hatcher/AT/ATpage.html.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "posets.html#the-opposite-order",
+    "href": "posets.html#the-opposite-order",
+    "title": "3  Partially Ordered Sets",
+    "section": "3.3 The Opposite Order",
+    "text": "3.3 The Opposite Order\nFor every poset \\((X, \\preccurlyeq)\\) there is a corresponding poset called the opposite poset. The underlying set \\(X\\) remains the same, but we define a new order \\(\\preccurlyeq^{\\text{op}}\\) on \\(X\\) by \\(x \\precurlyeq^{\\text{op}} y\\) if and only if \\(y \\precurlyeq x\\).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Partially Ordered Sets</span>"
     ]
   }
 ]
