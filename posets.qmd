@@ -9,7 +9,7 @@ Let $m$ and $n$ be integers. We say $m$ *divides* $n$, and we write $m \mid n$ i
 
 For example, $3$ divides $6$ since $3 \cdot 2 = 6$, and $-5$ divides $15$ since $-5 \cdot 3 = 15$.
 
-::: {#exr-2.1}
+::: {#exr}
 Show that for any integer $a$ we have $a \mid a$.
 :::
 
@@ -24,10 +24,7 @@ Another important note about the "divides" relation is that to say "$a$ divides 
 
 [^1]: A binary operation on a set $X$ is a mapping $X \times X \to X$. A relation is not a mapping; it is simply a statement (something that is either true or false).
 
-
-This property is known as *antisymmetry*, and we say that $\mid$ is an *antisymmetric* relation on $\mathbb{N}$.
-
-::: {#exr-2.3}
+::: {#exr}
 Show that if $a$, $b$, and $c$ are integers, and $a \mid b$ and $b \mid c$, then $a \mid c$.
 :::
 
@@ -42,7 +39,7 @@ For all that follows, we denote by $\mathbb{N}$ the *natural numbers*, consistin
 
 [^2]: This differs from another convention that excludes zero, which we may be used to.
 
-::: {#exr-2.3}
+::: {#exr}
 Show that for natural numbers $a$ and $b$, if $a \mid b$ and $b \mid a$, then $a = b$.[^3]
 :::
 
@@ -57,16 +54,18 @@ If $b = 0$, then because $a k_1 = b$ we have either $a = 0$ (and thus $a = b$), 
 If $b \neq 0$ (i.e., $k_1 = k_2 = 1$), then certainly $a = 1 \cdot a = a k_1 = b$. In either case, $a = b$.
 </details>
 
-::: {#exr-2.4}
+This property is known as *antisymmetry*, and we say that $\mid$ is an *antisymmetric* relation on $\mathbb{N}$.
+
+::: {#exr}
 Give an example of a pair of integers for which $a \mid b$ and $b \mid a$, yet $a \neq b$.
 :::
 
 ## Defining Posets
 Given a set $X$ and a binary relation $\preccurlyeq$ defined on $X$, we say that $(X, \preccurlyeq)$ is a *partially ordered set* and that $\preccurlyeq$ is a *partial order* on $X$ if the relation $\preccurlyeq$ is reflexive, antisymmetric, and transitive. 
 
-We will use $\preccurlyeq$ to denote an arbitrary partial order. The set $(\mathbb{N}, \mid)$ is a poset, since we verified that $\mid$ is reflexive, transitive, and antisymmetric on $\mathbb{N}$ in the previous section. On the other hand, $(\mathbb{Z}, \mid)$ is not a poset, since $\mid$ is not antisymmetric if we allow both positive and negative integers (see @exr-2.4).
+We will use $\preccurlyeq$ to denote an arbitrary partial order. The set $(\mathbb{N}, \mid)$ is a poset, since we verified that $\mid$ is reflexive, transitive, and antisymmetric on $\mathbb{N}$ in the previous section. On the other hand, $(\mathbb{Z}, \mid)$ is not a poset, since $\mid$ is not antisymmetric if we allow both positive and negative integers.
 
-::: {#exr-2.5}
+::: {#exr}
 Show that the following are posets:
 
 1. $(\mathbb{Z}, \leq)$.
@@ -82,7 +81,7 @@ Show that the following are posets:
 
 These assume prior knowledge and may be safely skipped.
 
-::: {#exr-2.6}
+::: {#exr}
 Show that the following are posets:
 
 1. For an arbitrary group $G$, the pair $(\mathscr{A}(G), \leq)$ is a partially ordered set, where $\mathscr{A}(G)$ consists of the subgroups of $G$ and $\leq$ is the "subgroup" relation.

@@ -10,7 +10,13 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - sets.qmd
     - posets.qmd
+    - groups.qmd
+    - vectorSpaces.qmd
+    - abstractCategories.qmd
+    - functors.qmd
+    - naturalTransformations.qmd
     - references.qmd
 
 bibliography: references.bib
